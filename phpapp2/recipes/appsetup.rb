@@ -1,6 +1,6 @@
 log node[:deploy][:myphpapp2].inspect
 
-template "#{node[:deploy][:myphpapp2][:deploy_to]}/db-connect.php" do
+template "#{node[:deploy][:myphpapp2][:deploy_to]}/current/db-connect.php" do
   source "db-connect.php.erb"
   mode 0660
   node[:deploy][:group]
