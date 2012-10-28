@@ -6,6 +6,7 @@ execute "mysql-create-table" do
    message varchar(255) NOT NULL, 
    PRIMARY KEY (time)
 )'"
+  not_if "/usr/bin/mysql -u#{node[:deploy][:myphpapp2][:database][:username]} -p#{node[:deploy][:myphpapp2][:database][:password]} #{node[:deploy][:myphpapp2][:database][:database]} -e'SHOW TABLES' | grep chat"
   action :run
 end
 
