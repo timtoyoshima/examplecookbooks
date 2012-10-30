@@ -5,7 +5,7 @@
       define('DB_NAME', <%= @db%>);
       define('DB_USER', <%= @user%>);
       define('DB_PASSWORD', <%= @password%>);
-      define('DB_HOST', <%= @host%>);
+      define('DB_HOST', '<%= @host%>');
       
       mysql_connect(DB_HOST, DB_USER, DB_PASSWORD) or die(mysql_error()); 
       mysql_select_db(DB_NAME) or die(mysql_error()); 
