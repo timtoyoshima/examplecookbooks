@@ -4,11 +4,10 @@ template "#{node[:deploy][:myphpapp2][:deploy_to]}/current/db-connect.php" do
   source "db-connect.php.erb"
   mode 0660
   node[:deploy][:group]
+
 if platform?("ubuntu")
   owner "www-data"
-end
-  
-if platform?("rhel") && platform_family?("amazon")   
+elsif platform?("rhel") && platform_family?("amazon")   
   owner "apache"
 end
 
