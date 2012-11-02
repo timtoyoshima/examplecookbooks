@@ -1,4 +1,4 @@
-log node[:deploy][:myphpapp2].inspect
+log node[:phpapp2][:dbtable].inspect
 
 template "#{node[:deploy][:myphpapp2][:deploy_to]}/current/db-connect.php" do
   source "db-connect.php.erb"
@@ -16,7 +16,8 @@ end
       :host =>     (node[:deploy][:myphpapp2][:database][:host] rescue nil),
       :user =>     (node[:deploy][:myphpapp2][:database][:username] rescue nil),
       :password => (node[:deploy][:myphpapp2][:database][:password] rescue nil),
-      :db =>       (node[:deploy][:myphpapp2][:database][:database] rescue nil)
+      :db =>       (node[:deploy][:myphpapp2][:database][:database] rescue nil),
+      :table =>    (node[:phpapp2][:dbtable] rescue nil)
   )
 
  only_if do
