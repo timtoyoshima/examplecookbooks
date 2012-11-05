@@ -1,0 +1,1 @@
+default[:phpapp][:dbtable] = 'message'
